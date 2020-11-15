@@ -6,6 +6,7 @@ Created on Sun Nov 15 00:05:12 2020
 @author: khush
 """
 from flask import Flask, render_template, Response
+import os
 import cv2
 import numpy as np
 #import cv2
@@ -84,4 +85,5 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))
+   app.run(debug=True, port=port,use_reloader=False)
